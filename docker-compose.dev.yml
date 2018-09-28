@@ -5,6 +5,7 @@ version: '3.4'
 
 services:
   php:
+    user: "1000:1000"
     build:
       target: api_platform_php_dev
     environment:
@@ -18,6 +19,7 @@ services:
       # Make sure to also change your listening port in the IDE to this value
       XDEBUG_CONFIG: >-
         remote_enable=1
-        remote_host=host.docker.internal
+        remote_connect_back=1
         remote_port=9999
         idekey=PHPSTORM
+        
